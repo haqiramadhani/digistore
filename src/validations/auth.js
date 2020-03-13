@@ -34,5 +34,17 @@ module.exports = {
       if (checkPhone > 0) errors.push(`phone already exist`);
     }
     return {errors, valid: errors.length === 0}
+  },
+  login: async (data, model) => {
+    const {email, password} = data;
+    let errors = [];
+    // check empty data
+    if (!email) errors.push(`email can't be empty`);
+    if (!password) errors.push(`password can't be empty`);
+    // check length
+    if (20 < password.length < 8) errors.push(`password should be 8 -20 in length`);
+    // validation
+    if (!validEmail.test(email)) errors.push(`${email} is not valid email`);
+    return {errors, valid: errors.length === 0}
   }
 };
