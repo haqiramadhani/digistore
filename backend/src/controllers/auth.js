@@ -12,6 +12,8 @@ module.exports = {
     if (!valid) return res.status(400).json({errors});
     // create new user
     const newUser = new authModel(req.body);
+    // sending verification email
+
     // password encryption
     bcrypt.genSalt(10,(err,salt) => {
       bcrypt.hash(newUser.password,salt,(err,hash) => {
