@@ -14,7 +14,7 @@ const router = express.Router();
 
 // Routing
 router.post('/init'); // body: {session: string, phone: string} // Create new session
-router.get('/qrcode'); // ?token=string //
+router.get('/qrcode'); // Get the qrcode image
 router.post('/send'); // body: {phone: string, message: string} // Send message to phone number
 router.post('/addParticipant'); // body: {idGroup: string, idParticipant: string} // Add participant to Group
 router.get('/asyncLoadAllEarlierMessages'); // ?contactId=string // Load all messages in chat
@@ -63,7 +63,7 @@ router.post('/sendContact'); // body: {to: string, contactId: string | string[]}
 router.post('/sendFile'); // body: {to: string, base64: string, filename: string, caption: string} // Sends a file to given chat, with caption or not, using base64. This is exactly the same as sendImage
 router.post('/sendGiphy'); // body: {to: string, giphyMediaUrl: string, caption: string} // Sends a video to given chat as a gif by using a giphy link, with caption or not, using base64
 router.post('/sendImage'); // body: {to: string, base64: string, filename: string, caption: string} // Sends a image to given chat, with caption or not, using base64
-router.post('/sendImageAsSticker'); // body: {b64: string, to: string} // This function takes an image and sends it as a sticker to the recipient. This is helpful for sending semi-ephemeral things like QR codes. The advantage is that it will not show up in the recipients gallery. This function automatiicaly converts images to the required webp format.
+router.post('/sendImageAsSticker'); // body: {b64: string, to: string} // This function takes an image and sends it as a sticker to the recipient. This is helpful for sending semi-ephemeral things like QR codes. The advantage is that it will not show up in the recipients gallery. This function automatically converts images to the required webp format.
 router.post('/sendImageWithProduct'); // body: {to: string, base64: string, caption: string, bizNumber: string, productId: string} // Sends product with image to chat
 router.post('/sendLocation'); // body: {to: string, lat: any, lng: any, loc: string} // Sends a location message to given chat
 router.post('/sendMessageWithThumb'); // body: {thumb: string, url: string, title: string, description: string, chatId: string}

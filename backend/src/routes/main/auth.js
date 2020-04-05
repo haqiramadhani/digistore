@@ -12,8 +12,8 @@ const router = express.Router();
 router.post('/login', login);
 router.post('/register', register);
 router.post('/activate');
-router.post('/forget-password');
-router.post('/update-password');
+router.post('/forgetPassword');
+router.post('/updatePassword');
 
 // Export Module
 module.exports = router;
