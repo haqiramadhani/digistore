@@ -16,8 +16,8 @@ server.use(logger('dev'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(router);
-server.use('/*', express.static(path.join(__dirname, 'public/index.html')));
+server.get('/*', express.static(path.join(__dirname, 'public/index.html')));
 
-server.listen(port, () => console.info(`server running in http://192.168.1.99:${port}`));
+server.listen(port, () => console.info(`server running in http://localhost:${port}`));
 
 module.exports = server;

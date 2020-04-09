@@ -8,12 +8,13 @@ const express = require('express');
 // const message = require('./message');
 
 // Import Controller
+const {init} = require('../../controllers/whatsapp');
 
 // Create new ExpressJS Route
 const router = express.Router();
 
 // Routing
-router.post('/init'); // body: {session: string, phone: string} // Create new session
+router.post('/init', init); // body: {session: string, phone: string} // Create new session
 router.get('/qrcode'); // Get the qrcode image
 router.post('/send'); // body: {phone: string, message: string} // Send message to phone number
 router.post('/addParticipant'); // body: {idGroup: string, idParticipant: string} // Add participant to Group

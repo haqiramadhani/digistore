@@ -10,7 +10,7 @@ const router = express.Router();
 
 // Routing
 router.use('/api', api);
-router.use('/file');
+// router.use('/file');
 
 // Export Module
 module.exports = router;
